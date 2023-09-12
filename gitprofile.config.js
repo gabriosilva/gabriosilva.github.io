@@ -163,7 +163,7 @@ const config = {
         'Health is a Game - Cancer Prevention Game - USP (University of São Paulo)',
       description:
         'Game about cancer prevention methods in partnership with the Faculty of Medicine at USP.',
-      imageUrl: '/assets/img/fmusp.jpg',
+      imageUrl: './assets/img/fmusp.jpg',
       link: 'https://github.com/2022M1T5-Inteli/Health-is-a-game',
     },
     {
@@ -171,14 +171,14 @@ const config = {
         'FlightWise - Low-Altitude Flight Path Planner - AEL (Defense Company)',
       description:
         'Worked with a team on a software solution in Java for optimizing low-altitude fight paths to reduce collision risk and detection by monitoring systems. The project considered mission factors and constraints.',
-      imageUrl: 'assets/img/ael.jpeg',
+      imageUrl: './assets/img/ael.jpeg',
       link: 'https://github.com/2023M5T1-Inteli/grupo3',
     },
     {
       title: 'KeepGrowing - IoT - Gerdau (Brazilian Steel Producer)',
       description:
         "Worked closely with Gerdau for an IoT solution with hardware components to automate the collection of temperature and humidity data in Gerdau's greenhouses.",
-      imageUrl: 'assets/img/gerdau.jpg',
+      imageUrl: './assets/img/gerdau.jpg',
       link: 'https://github.com/2022M4T5-Inteli/G4',
     },
     {
@@ -186,7 +186,7 @@ const config = {
         'The Oracle - AI Prediction Model - Rede Gazeta (Brazilian TV Network)',
       description:
         'Worked on "The Oracle," a predictive model using Machine Learning to estimate TV viewership, guiding content positioning decisions for Rede Gazeta. It provided insights for preventing issues and optimizing TV program premieres. Processed datasets over 1 million entries.',
-      imageUrl: 'assets/img/rede.jpg',
+      imageUrl: './assets/img/rede.jpg',
       link: 'https://github.com/2022M3T5-Inteli/Data-Oracles',
     },
     {
@@ -194,7 +194,7 @@ const config = {
         'BladeRunner - Trim Loss Optimization Algorithm - Paper Production Company',
       description:
         "Developed a paper reel cutting optimization algorithm using advanced methodologies like genetic algorithms, simplex, and integer solvers to improve operational efficiency at one of Brazil's largest paper production companies. Focused on minimizing material and time waste.",
-      imageUrl: 'assets/img/paper-company.png',
+      imageUrl: './assets/img/paper-company.png',
       link: 'https://github.com/2023M6T1-Inteli/grupo1_publico',
     },
     {
@@ -202,7 +202,7 @@ const config = {
         'Dr. Edu - Automated School Diagnosis Tool - Falconi (Consulting Firm)',
       description:
         'Created a full-stack web application to automate the diagnostic tool for school administrators. Provides a multidimensional assessment of educational and management health for both public and private schools.',
-      imageUrl: 'assets/img/falconi.png',
+      imageUrl: './assets/img/falconi.png',
       link: 'https://github.com/2022M2T5-Inteli/Millenium-Dev',
     },
   ],
