@@ -1,0 +1,57 @@
+<Demo>
+  Demo entry, written to show the format. The model is real; the piece is a
+  placeholder for one of Gabrio’s own studies.
+</Demo>
+
+<p className="standfirst">
+  If every stop on a route costs a small pause, how long does that pause have to
+  be before a signal prefers a longer road with fewer stops?
+</p>
+
+Below are seven points joined by paths. Touch one and a pulse leaves it along every path at once. Each point the pulse reaches lights up, waits, then passes it on. The line under the drawing is the _score_: one mark for each point, placed at the moment it fires.
+
+<PulseNetwork />
+
+## The rules
+
+1. A pulse travels along every path at the same constant speed.
+2. When a pulse reaches a point for the first time, the point fires.
+3. A point that fires waits for the _pause_, then sends a pulse down each of its other paths.
+4. A point fires only once per wave. Pulses that arrive later are absorbed; they show as grey dots that fade on arrival.
+
+The blue line left behind the wave marks the route that reached each point first. You can also drag any point to change the distances.
+
+## Something to try
+
+Start from A with the pause near zero and look at how G is reached: the wave takes the top route, through B, C and E. Now drag the pause up slowly and start again from A. Somewhere around 60–70 ms, G is reached from below instead, even though that road is longer.<Note n={1}>In this drawing the top route is about 534 units long and the bottom about 562, roughly 5% further.</Note>
+
+## What seems to be happening
+
+A route’s cost is its travel time plus one pause for every point it passes through:
+
+<p className="formula">time = distance ÷ speed + stops × pause</p>
+
+The top route to G passes through three points; the bottom one through only one. So each extra millisecond of pause costs the top route two milliseconds more than the bottom. The switch happens where that difference cancels out the bottom route’s extra distance, at about 63 ms.<Note n={2}>The extra 28 units, at 0.22 units per millisecond, take about 126 ms, shared across the two extra stops.</Note>
+
+<Predict
+  question="Set the pause to 250 ms and start from A. Which point fires last?"
+  options={['E', 'F', 'G']}
+  answer={1}
+>
+  F. With long pauses, G is reached directly from D, and F has to wait for the
+  wave to pass through E. The order becomes A · B · D · C · E · G · F. Check it
+  in the drawing above.
+</Predict>
+
+The order on the score shifts too, but not all at once: other points swap places at other pause lengths, because each one sits at a different balance between distance and stops.
+
+## Open questions
+
+- Starting from G instead of A, does the same switch happen at the same pause? Why, or why not?
+- What if pauses were different at each point, so some stops were cheap and others expensive?
+- Turn on the sound and the loop. At which pause does the sequence sound most like a rhythm, rather than a list of events?
+
+<p className="meta">
+  This is a small authored model, not a description of any real network. It is
+  deterministic: the same start, pause and positions always give the same wave.
+</p>

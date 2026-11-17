@@ -1,0 +1,35 @@
+<Demo>
+  Demo spread. Every piece here is a placeholder, arranged to show how a
+  field-notebook page works on this site.
+</Demo>
+
+Some entries aren’t a column of text. They are a page: a photograph taped down, a note beside it, a small drawing in the corner. Each piece is placed by hand. Touch one and it lifts; pull it and it springs back to where it was put.
+
+<Spread height={700}>
+  <Item x={0} y={2} w={44} rotate={-2} tape>
+    <Figure
+      placeholder="A photograph goes here"
+      caption="Caption: where, when, what caught my eye."
+    />
+  </Item>
+  <Item x={50} y={4} w={34} rotate={1.5} card>
+    <Scribble>
+      A note sits beside the thing it describes. It can be one line, or a
+      question with no answer yet.
+    </Scribble>
+  </Item>
+  <Item x={56} y={34} w={40} rotate={-1}>
+    <Drawing name="flight" />
+  </Item>
+  <Item x={4} y={62} w={36} rotate={1} card>
+    <Scribble>
+      A small working drawing can sit on the page too, and play when it comes
+      into view.
+    </Scribble>
+  </Item>
+  <Item x={46} y={66} w={28} rotate={2.5} tape>
+    <Figure placeholder="A second, smaller photo" />
+  </Item>
+</Spread>
+
+On a phone, the pieces fall into a single column in the same order, so nothing is lost, only the arrangement.

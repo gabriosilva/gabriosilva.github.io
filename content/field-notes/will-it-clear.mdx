@@ -1,0 +1,49 @@
+<Demo>
+  Demo entry, written to show the format. The model is real; the piece is a
+  placeholder for one of Gabrio’s own studies.
+</Demo>
+
+A sketch with a question written beside it: three stacked blocks, a ramp, a ball, and one small block further along the ground. Will it clear the last block?
+
+<Predict
+  question="As it’s set up below, if you let the ball go, will it clear the block?"
+  options={['Yes', 'No']}
+  answer={1}
+>
+  It flies, but not far enough: it hits the block’s face. Try it below, then
+  drag the ball higher up the ramp.
+</Predict>
+
+<BallRamp />
+
+The higher the ball starts, the faster it leaves the lip and the further it flies. With the block where it begins, the ball has to start almost at the very top to make it over.
+
+## Something to try
+
+Start the ball at the top and drag the block further away, a little at a time. At some point the ball can no longer clear it, even though from the top it lands well beyond where the block is.<Note n={1}>In this model, from the top of the ramp the ball lands around x = 570, but no block placed beyond about x = 476 can be cleared.</Note>
+
+<Predict
+  question="Why can a ball that lands at 570 not clear a block at 500?"
+  options={[
+    'It slows down in the air',
+    'It is already too low by then',
+    'The block is too wide',
+  ]}
+  answer={1}
+>
+  To clear the block, the ball has to be above its top edge for the block’s
+  whole width. Near the end of its flight the ball is falling steeply, so long
+  before it lands it has already dropped below the height of the block. Landing
+  far away and clearing something far away are different questions.
+</Predict>
+
+## The rules of this sketch
+
+- The ball rolls without slipping, so some of its energy goes into spinning; it leaves the lip at about 85% of the speed a sliding ball would.
+- It leaves the lip at 38° upward and then follows a simple arc, with no air resistance.
+- If it touches the block, it bounces back and settles. If it lands before the block and rolls into it, that doesn’t count: the block has to be cleared in the air.
+
+## Open questions
+
+- What would a steeper lip change: further flights, or higher ones?
+- Is there a block position where almost every starting height works, and one where only a single height does?
