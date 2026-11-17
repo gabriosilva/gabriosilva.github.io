@@ -2,14 +2,15 @@
   "name": "gabriosilva.github.io",
   "private": true,
   "version": "0.2.0",
-  "description": "Gabrio Lina — a notebook with working parts",
+  "description": "Gabrio Lina \u2014 a notebook with working parts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@14 out",
     "lint": "tsc --noEmit",
     "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write ."
+    "prettier:fix": "prettier --write .",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
