@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Gabrio Lina',
-  url: 'https://gabriosilva.github.io',
+  url: 'https://gabriolina.com',
   role: 'Software Engineer',
   description:
     'Gabrio Lina, software engineer at Morgan Stanley in São Paulo, working on trade allocation, payments and digital signing. Work, field notes and interactive experiments.',
