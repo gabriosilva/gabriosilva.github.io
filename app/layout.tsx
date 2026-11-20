@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Instrument_Sans, Newsreader } from 'next/font/google';
+import Analytics from '@/components/site/Analytics';
 import Masthead from '@/components/site/Masthead';
 import { SITE } from '@/content/site';
 import './globals.css';
@@ -106,6 +107,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Analytics />
         <a className="skip" href="#main">
           Skip to content
         </a>
