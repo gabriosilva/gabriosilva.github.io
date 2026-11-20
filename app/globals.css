@@ -143,16 +143,6 @@ img {
   }
 }
 
-main {
-  animation: arrive 520ms var(--settle) both;
-}
-@keyframes arrive {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-}
-
 /* ---- Masthead ------------------------------------------------------------- */
 
 .masthead {
