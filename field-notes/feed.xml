@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gabrio Lina — Field notes</title>
+    <link>https://gabriolina.com/field-notes/</link>
+    <atom:link href="https://gabriolina.com/field-notes/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Notes, studies, pictures and pages by Gabrio Lina.</description>
+    <language>en</language>
+    <item>
+      <title>A tree from one rule</title>
+      <link>https://gabriolina.com/field-notes/a-tree-from-one-rule/</link>
+      <guid isPermaLink="true">https://gabriolina.com/field-notes/a-tree-from-one-rule/</guid>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Study</category>
+      <description>A little experiment with trees.</description>
+    </item>
+    <item>
+      <title>New York</title>
+      <link>https://gabriolina.com/field-notes/new-york/</link>
+      <guid isPermaLink="true">https://gabriolina.com/field-notes/new-york/</guid>
+      <pubDate>Sat, 14 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Travel</category>
+      <description>A few pictures from a recent trip to NYC, in the order they happened: Times Square on the first night, streets by day, and the skyline after dark.</description>
+    </item>
+  </channel>
+</rss>

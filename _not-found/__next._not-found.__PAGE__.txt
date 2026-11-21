@@ -1,0 +1,35 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/3rzx2y4qif5r6.js"
+3:I[51684,["$2"],"default"]
+4:I[68417,["$2"],"default"]
+5:I[39756,["$2"],"default"]
+6:I[37457,["$2"],"default"]
+7:I[22016,["$2"],""]
+e:I[97367,["$2"],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
+13:I[97367,["$2"],"$12"]
+14:"MetadataBoundary"
+15:I[97367,["$2"],"$14"]
+:HL["/_next/static/chunks/0b2p9r84gfoh0.css","style"]
+9:X
+c:X
+c:C
+d:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"id":"main","className":"page","children":[["$","header",null,{"className":"page-head","children":[["$","h1",null,{"children":"Nothing here"}],["$","p",null,{"children":"This page doesn’t exist, or it moved when the site was rebuilt."}]]}],["$","p",null,{"children":["$","$L7",null,{"href":"/","children":"Start from the beginning →"}]}]]}],null,["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$9"}}]]
+a:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$c","s":"$9"},"c":"$Qd"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0b2p9r84gfoh0.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3rzx2y4qif5r6.js","async":true}]],["$","html",null,{"lang":"en","className":"Vh-99W_variable hccXaq_variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}"}}]}],["$","body",null,{"children":[["$","$L3",null,{}],["$","a",null,{"className":"skip","href":"#main","children":"Skip to content"}],["$","$L4",null,{}],["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[["$","main",null,{"id":"main","className":"page","children":[["$","header",null,{"className":"page-head","children":[["$","h1",null,{"children":"Nothing here"}],["$","p",null,{"children":"This page doesn’t exist, or it moved when the site was rebuilt."}]]}],["$","p",null,{"children":["$","$L7",null,{"href":"/","children":"Start from the beginning →"}]}]]}],[]]}],["$","div",null,{"className":"page","children":["$","footer",null,{"className":"foot","children":[["$","span",null,{"children":"Gabrio Lina"}],["$","ul",null,{"children":[["$","li",null,{"children":["$","a",null,{"href":"https://github.com/gabriosilva","children":"GitHub"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://www.linkedin.com/in/gabrio-lina-17ba60205","children":"LinkedIn"}]}]]}]]}]}]]}]]}]]}],"p":"$@8","v":null,"s":"$9"},"c":"$Qa"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#fbfaf7"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Not found · Gabrio Lina"}],["$","meta","1",{"name":"description","content":"Gabrio Lina, software engineer at Morgan Stanley in São Paulo, working on trade allocation, payments and digital signing. Work, field notes and interactive experiments."}],["$","link","2",{"rel":"author","href":"https://gabriolina.com"}],["$","meta","3",{"name":"author","content":"Gabrio Lina"}],["$","meta","4",{"name":"keywords","content":"Gabrio Lina,software engineer,Morgan Stanley,São Paulo,Java,Spring Boot,Angular,backend engineer,full-stack engineer,AI agents"}],["$","meta","5",{"name":"robots","content":"noindex, follow"}],["$","meta","6",{"name":"category","content":"technology"}],["$","link","7",{"rel":"canonical","href":"https://gabriolina.com/"}],["$","link","8",{"rel":"alternate","type":"application/rss+xml","href":"https://gabriolina.com/field-notes/feed.xml","title":"Gabrio Lina — Field notes"}],["$","meta","9",{"property":"og:title","content":"Gabrio Lina"}],["$","meta","10",{"property":"og:description","content":"Gabrio Lina, software engineer at Morgan Stanley in São Paulo, working on trade allocation, payments and digital signing. Work, field notes and interactive experiments."}],["$","meta","11",{"property":"og:url","content":"https://gabriolina.com/"}],["$","meta","12",{"property":"og:site_name","content":"Gabrio Lina"}],["$","meta","13",{"property":"og:locale","content":"en_GB"}],["$","meta","14",{"property":"og:image","content":"https://gabriolina.com/og.png"}],["$","meta","15",{"property":"og:image:width","content":"1200"}],["$","meta","16",{"property":"og:image:height","content":"630"}],["$","meta","17",{"property":"og:image:alt","content":"Gabrio Lina — Software Engineer"}],["$","meta","18",{"property":"og:type","content":"website"}],["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","20",{"name":"twitter:title","content":"Gabrio Lina"}],["$","meta","21",{"name":"twitter:description","content":"Gabrio Lina, software engineer at Morgan Stanley in São Paulo, working on trade allocation, payments and digital signing. Work, field notes and interactive experiments."}],["$","meta","22",{"name":"twitter:image","content":"https://gabriolina.com/og.png"}],["$","meta","23",{"name":"twitter:image:alt","content":"Gabrio Lina — Software Engineer"}],["$","meta","24",{"name":"twitter:image:width","content":"1200"}],["$","meta","25",{"name":"twitter:image:height","content":"630"}],"$L16","$L17","$L18","$L19"]}]}],null]}],"$L1a"]}],"p":"$@1b","v":null,"s":"$9"}},"a":"$@1c","u":"$@1d","b":"BJW-TXXz2ZBioAOx0UbMu"}
+1e:I[27201,["$2"],"IconMark"]
+10:null
+16:["$","link","26",{"rel":"icon","href":"/favicon.ico","sizes":"any"}]
+17:["$","link","27",{"rel":"icon","href":"/favicon-32x32.png","type":"image/png","sizes":"32x32"}]
+18:["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
+19:["$","$L1e","29",{}]
+1a:["$","meta",null,{"name":"next-size-adjust","content":""}]
+9:300
+1d:true
+9:C
+1c:0
+b:"$undefined"
+8:"$undefined"
+1b:"$undefined"
+11:"$undefined"
