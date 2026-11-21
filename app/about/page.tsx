@@ -105,6 +105,12 @@ export default function AboutPage() {
           <a href={SITE.links.github}>GitHub</a>
         </li>
       </ul>
+
+      <h2 id="photos">Photos</h2>
+      <p>
+        The photos on this site are mine, all rights reserved. If you’d like
+        to use one, ask me on <a href={SITE.links.linkedin}>LinkedIn</a>.
+      </p>
     </main>
   );
 }

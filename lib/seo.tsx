@@ -260,6 +260,10 @@ export const entryJsonLd = (e: Entry) =>
             caption: e.image.alt,
             creator: { '@id': PERSON_ID },
             copyrightHolder: { '@id': PERSON_ID },
+            creditText: SITE.name,
+            copyrightNotice: `© ${e.date.slice(0, 4)} ${SITE.name}`,
+            license: `${SITE.url}/about/#photos`,
+            acquireLicensePage: `${SITE.url}/about/#photos`,
           }
         : `${SITE.url}/og.png`,
       author: { '@id': PERSON_ID, name: SITE.name, url: SITE.url },
