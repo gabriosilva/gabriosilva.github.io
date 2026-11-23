@@ -39,6 +39,15 @@ export const SHOW_DEMOS =
 /** What is on the live site: add your own entries here, newest first. */
 const PUBLISHED: Entry[] = [
   {
+    slug: 'things-that-make-me-feel-human',
+    title: 'Things that make me feel human',
+    date: '2026-11-23',
+    kind: 'Note',
+    summary: 'A list of things that make me feel alive, and human.',
+    art: 'none',
+    load: () => import('./things-that-make-me-feel-human.mdx'),
+  },
+  {
     slug: 'a-tree-from-one-rule',
     title: 'A tree from one rule',
     date: '2026-11-15',

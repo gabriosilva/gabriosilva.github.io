@@ -22,6 +22,8 @@ Every field note is one MDX file: Markdown, plus a few building blocks you can d
 
 3. Put images and audio in `public/field-notes/<slug>/` and refer to them as `/field-notes/<slug>/photo.jpg`.
 
+The share preview (`/og/<slug>.png`) is made for you at build time from the title, kind and date, with the entry's `image` if it has one. The build fetches the fonts for it from Google Fonts; offline it falls back to a plain font.
+
 Run `npm run dev` and open http://localhost:3000/field-notes/<slug>/.
 
 ## Examples to copy from
@@ -149,6 +151,20 @@ A recording, off until the reader presses play.
 ```mdx
 <Sound src="/field-notes/my-entry/rain.mp3" title="Rain on the window, 30 s" />
 ```
+
+### Unfold
+
+A long sheet folded like an accordion. Tapping the cover lets it fall open, panel by panel; a link under it folds it back up. Each child goes on its own panel, and there are always at least four.
+
+```mdx
+<Unfold label="things that make me feel human">
+  <Postit>I’m inspired by humanity.</Postit> {/* optional: tilt={-2} side="left|center|right" color="yellow|pink|blue|green" */}
+  <Glued src="/field-notes/my-entry/photo.jpg" alt="…" width={1000} height={667} caption="optional" />
+  <Written>A line written straight onto the paper.</Written>
+</Unfold>
+```
+
+The paper, its creases and its stains are drawn by `lib/paper-shader.ts` (textures: CC0, ambientCG).
 
 ### Contraptions
 

@@ -17,6 +17,8 @@ import {
 } from '@/components/mdx/blocks';
 import { Aside, Stop, Timeline } from '@/components/mdx/timeline';
 import Drawing from '@/components/work/Drawing';
+import Unfold from '@/components/field-notes/Unfold';
+import { Glued, Postit, Written } from '@/components/field-notes/Paper';
 
 // Every field note can use these without importing anything.
 // See WRITING.md for how to use each one.
@@ -38,6 +40,10 @@ const components: MDXComponents = {
   Timeline,
   Stop,
   Aside,
+  Unfold,
+  Postit,
+  Glued,
+  Written,
   Drawing,
 };
 
