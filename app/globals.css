@@ -2587,21 +2587,86 @@ p {
 .glued {
   width: min(360px, 74%);
 }
+/* An old print: a white border gone a little yellow, worn corners, faded
+   colour, dust, fine scratches and a crease, glued flat to the sheet. */
+.glued-print {
+  filter: drop-shadow(0 0 0.5px rgb(60 45 10 / 0.25)) drop-shadow(0 2px 2px rgb(60 45 10 / 0.18))
+    drop-shadow(0 6px 8px rgb(60 45 10 / 0.12));
+}
+.glued-paper {
+  position: relative;
+  padding: 9px;
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 62%, rgb(165 130 70 / 0.2)),
+    linear-gradient(#f3efe4, #f3efe4),
+    var(--fibre);
+  clip-path: polygon(
+    0 3px, 3px 0, calc(100% - 1px) 0, 100% 1.5px,
+    100% calc(100% - 4px), calc(100% - 5px) 100%, 2px 100%, 0 calc(100% - 2px)
+  );
+}
 .glued img {
   display: block;
   width: 100%;
   height: auto;
-  box-shadow:
-    0 0 0 1px rgb(60 45 10 / 0.08),
-    0 2px 3px rgb(60 45 10 / 0.18);
+  filter: sepia(0.22) saturate(0.82) contrast(0.9) brightness(1.04);
 }
-.glued::after {
-  /* A little glue sheen across the print. */
+.glued-wear {
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  background:
+    /* fine scratches in the emulsion */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23fff' stroke-linecap='round'%3E%3Cpath d='M22 64 Q70 80 128 76' stroke-width='.7' stroke-opacity='.45'/%3E%3Cpath d='M300 18 Q296 120 322 262' stroke-width='.5' stroke-opacity='.35'/%3E%3Cpath d='M70 230 L170 212' stroke-width='.6' stroke-opacity='.3'/%3E%3Cpath d='M352 140 Q370 150 392 148' stroke-width='.8' stroke-opacity='.4'/%3E%3C/g%3E%3C/svg%3E")
+      0 0 / 100% 100%,
+    /* dust */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='d' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 .97 0 0 0 11 -9.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E"),
+    /* a corner rubbed pale */
+    radial-gradient(circle at 0 100%, rgb(250 244 228 / 0.55), rgb(250 244 228 / 0.2) 22px, transparent 40px),
+    /* faded towards the edges */
+    radial-gradient(ellipse at 50% 45%, transparent 50%, rgb(140 105 50 / 0.22));
+  opacity: 0.85;
+}
+/* A crease across one corner of the print, and the glue's faint sheen. */
+.glued-paper::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, transparent 35%, rgb(255 255 255 / 0.14) 48%, transparent 60%);
   pointer-events: none;
+  background:
+    linear-gradient(
+      128deg,
+      transparent calc(80% - 1px),
+      rgb(255 255 255 / 0.5) 80%,
+      rgb(60 40 10 / 0.16) calc(80% + 1.2px),
+      transparent calc(80% + 4px)
+    ),
+    linear-gradient(115deg, transparent 35%, rgb(255 255 255 / 0.1) 48%, transparent 60%);
+}
+.glued-ink {
+  position: absolute;
+  top: 6%;
+  right: 5%;
+  width: 33%;
+  height: auto;
+  overflow: visible;
+  transform: rotate(-4deg);
+  fill: #23379a;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  pointer-events: none;
+}
+.glued-ink text {
+  font-family: var(--font-hand), cursive;
+  font-weight: 600;
+  font-size: 34px;
+}
+.glued-ink-slip {
+  fill: none;
+  stroke: #23379a;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-opacity: 0.8;
 }
 .glued figcaption,
 .written {
