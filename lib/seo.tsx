@@ -265,7 +265,7 @@ export const entryJsonLd = (e: Entry) =>
             license: `${SITE.url}/about/#photos`,
             acquireLicensePage: `${SITE.url}/about/#photos`,
           }
-        : `${SITE.url}/og.png`,
+        : `${SITE.url}/og/${e.slug}.png`,
       author: { '@id': PERSON_ID, name: SITE.name, url: SITE.url },
       isPartOf: { '@id': `${SITE.url}/field-notes/` },
       ...(e.experiment

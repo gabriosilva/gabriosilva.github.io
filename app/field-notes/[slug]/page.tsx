@@ -23,7 +23,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     publishedTime: entry.date,
     // Placeholder entries stay out of search results until replaced.
     noindex: entry.demo,
-    image: entry.image && { url: entry.image.src, ...entry.image },
+    image: {
+      url: `/og/${entry.slug}.png`,
+      width: 1200,
+      height: 630,
+      alt: entry.image?.alt ?? entry.title,
+    },
   });
 }
 
