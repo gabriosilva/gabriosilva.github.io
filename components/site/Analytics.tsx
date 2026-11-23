@@ -23,7 +23,6 @@ export default function Analytics() {
           session_recording: { maskAllInputs: true },
           disable_surveys: true,
           capture_dead_clicks: false,
-          respect_dnt: true,
         });
       });
     const idle = window.requestIdleCallback
