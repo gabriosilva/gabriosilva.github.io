@@ -20,7 +20,7 @@ export default function Analytics() {
           capture_pageview: 'history_change',
           capture_pageleave: true,
           autocapture: true,
-          disable_session_recording: true,
+          session_recording: { maskAllInputs: true },
           disable_surveys: true,
           capture_dead_clicks: false,
           respect_dnt: true,
