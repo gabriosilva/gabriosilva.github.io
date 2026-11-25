@@ -161,8 +161,14 @@ A long sheet folded like an accordion. Tapping the cover lets it fall open, pane
   <Postit>I’m inspired by humanity.</Postit> {/* optional: tilt={-2} side="left|center|right" color="yellow|pink|blue|green" */}
   <Glued src="/field-notes/my-entry/photo.jpg" alt="…" width={1000} height={667} caption="optional" />
   <Written>A line written straight onto the paper.</Written>
+  <Together> {/* several things on one panel, each placed with x, y and w, in % of the panel */}
+    <Glued src="…" alt="…" width={640} height={640} x={33} y={50} w={38} aged="light" />
+    <Pen x={82} y={36} w={26}>a few words</Pen>
+  </Together>
 </Unfold>
 ```
+
+`Glued` also takes `inked="…"`, written in blue pen over the print's top-right corner, `aged="light"` for a photo that already has a filter, `wear={0–3}` to pick how it's worn, and `cutout` for a photo cut out around its subject (a transparent `.webp`; macOS Vision can make one). `Pen` writes in blue ballpoint straight onto the paper.
 
 The paper, its creases and its stains are drawn by `lib/paper-shader.ts` (textures: CC0, ambientCG).
 

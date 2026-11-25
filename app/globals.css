@@ -2479,7 +2479,8 @@ p {
 }
 /* Light on a panel changes with its angle while it swings. */
 .unfold-panel > .unfold-paper,
-.unfold-panel > .stuck {
+.unfold-panel > .stuck,
+.unfold-panel > .together {
   filter: brightness(var(--lit, 1));
 }
 /* The shader-lit paper, over the CSS paper underneath. */
@@ -2527,6 +2528,17 @@ p {
 }
 .stuck-right {
   right: 9%;
+}
+.stuck-at {
+  left: var(--x);
+  top: var(--y);
+  translate: -50% -50%;
+}
+/* A panel with several things on it, placed by hand. */
+.together {
+  position: absolute;
+  inset: 0;
+  container-type: inline-size;
 }
 
 /* A sticky note: flat along its glue strip at the top, lifting a little
@@ -2585,7 +2597,7 @@ p {
 }
 
 .glued {
-  width: min(360px, 74%);
+  width: var(--w, min(360px, 74%));
 }
 /* An old print: a white border gone a little yellow, worn corners, faded
    colour, dust, fine scratches and a crease, glued flat to the sheet. */
@@ -2611,6 +2623,22 @@ p {
   height: auto;
   filter: sepia(0.22) saturate(0.82) contrast(0.9) brightness(1.04);
 }
+/* Already filtered once, back when it was taken: age it more gently. */
+.glued-light img {
+  filter: sepia(0.08) saturate(0.92) contrast(0.95) brightness(1.03);
+}
+.glued-light .glued-wear {
+  opacity: 0.4;
+}
+.glued-light {
+  --crease: 0;
+}
+.glued-light .glued-paper {
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 70%, rgb(165 130 70 / 0.1)),
+    linear-gradient(#f7f5ef, #f7f5ef),
+    var(--fibre);
+}
 .glued-wear {
   position: absolute;
   inset: 9px;
@@ -2635,19 +2663,115 @@ p {
   pointer-events: none;
   background:
     linear-gradient(
-      128deg,
-      transparent calc(80% - 1px),
-      rgb(255 255 255 / 0.5) 80%,
-      rgb(60 40 10 / 0.16) calc(80% + 1.2px),
-      transparent calc(80% + 4px)
+      var(--crease-deg, 128deg),
+      transparent calc(var(--crease-at, 80%) - 1px),
+      rgb(255 255 255 / calc(0.5 * var(--crease, 1))) var(--crease-at, 80%),
+      rgb(60 40 10 / calc(0.16 * var(--crease, 1))) calc(var(--crease-at, 80%) + 1.2px),
+      transparent calc(var(--crease-at, 80%) + 4px)
     ),
-    linear-gradient(115deg, transparent 35%, rgb(255 255 255 / 0.1) 48%, transparent 60%);
+    linear-gradient(var(--sheen-deg, 115deg), transparent 35%, rgb(255 255 255 / 0.1) 48%, transparent 60%);
 }
-.glued-ink {
+/* Cut out of a print with scissors, around the subject; the cut edge shows
+   the paper's white core. */
+.glued-cutout .glued-print {
+  filter: drop-shadow(0 0 0.6px rgb(255 255 255 / 0.85)) drop-shadow(0 0 0.5px rgb(60 45 10 / 0.25))
+    drop-shadow(0 2px 2px rgb(60 45 10 / 0.18)) drop-shadow(0 6px 8px rgb(60 45 10 / 0.12));
+}
+.glued-cutout .glued-paper {
+  padding: 0;
+  background: none;
+  clip-path: none;
+}
+.glued-cutout .glued-wear,
+.glued-cutout .glued-paper::after {
+  display: none;
+}
+/* Held down under a scissor-cut piece of clear sticky-back plastic. Over
+   the photo it's clear; over the page, its glue has gone yellow, unevenly.
+   Along the cut edge, where the glue is exposed, it has picked up dust and
+   fluff over the years; a little air is trapped near one corner.
+   Dust and glue: CC0 textures from ambientCG (SurfaceImperfections015, 003). */
+.plastic,
+.plastic-glue {
+  position: absolute;
+  inset: -6% -9% -4% -8%;
+  pointer-events: none;
+  clip-path: polygon(0.6% 0.9%, 52% 0.3%, 99.1% 0, 100% 48%, 99.4% 99.3%, 47% 100%, 0 99.6%, 0.3% 51%);
+}
+.plastic-glue {
+  background:
+    url('/field-notes/textures/plastic-glue.webp') 0 0 / 100% 100%,
+    rgb(232 205 140 / 0.1);
+  box-shadow: inset 0 0 6px rgb(150 115 45 / 0.14);
+  opacity: 0.28;
+}
+.glued .glued-print {
+  position: relative;
+}
+.plastic {
+  background:
+    radial-gradient(ellipse 5px 3.5px at 92% 84%, transparent 50%, rgb(255 255 255 / 0.4) 68%, transparent 85%),
+    radial-gradient(ellipse 3px 2px at 95% 88%, transparent 45%, rgb(255 255 255 / 0.35) 65%, transparent 85%);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.5),
+    inset 0 0 0 1.6px rgb(120 100 50 / 0.12);
+}
+.plastic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/field-notes/textures/plastic-dust.webp') 0 0 / 240px auto;
+  mask:
+    linear-gradient(to right, #000 0 6%, transparent 13% 87%, #000 94%),
+    linear-gradient(to bottom, #000 0 5%, transparent 11% 89%, #000 95%);
+}
+/* No two prints wear the same way. */
+.glued[data-wear='1'] {
+  --crease-deg: 232deg;
+  --crease-at: 84%;
+  --sheen-deg: 70deg;
+}
+.glued[data-wear='1'] .glued-wear {
+  scale: -1 1;
+}
+.glued[data-wear='2'] {
+  --crease: 0;
+  --sheen-deg: 140deg;
+}
+.glued[data-wear='2'] .glued-wear {
+  scale: 1 -1;
+}
+.glued[data-wear='3'] {
+  --crease-deg: 315deg;
+  --crease-at: 88%;
+  --crease: 0.7;
+}
+.glued[data-wear='3'] .glued-wear {
+  scale: -1 -1;
+}
+.ink {
+  fill: #23379a;
+  overflow: visible;
+  pointer-events: none;
+}
+.ink text {
+  font-family: var(--font-hand), cursive;
+  font-weight: 600;
+  font-size: 34px;
+}
+.ink-slip {
+  fill: none;
+  stroke: #23379a;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-opacity: 0.8;
+}
+/* Over a print's corner, sitting on the gloss. */
+.ink-on-print {
   position: absolute;
   top: 6%;
   right: 5%;
-  width: 33%;
+  width: calc(33% * var(--units) / 203);
   height: auto;
   overflow: visible;
   transform: rotate(-4deg);
@@ -2656,17 +2780,14 @@ p {
   opacity: 0.92;
   pointer-events: none;
 }
-.glued-ink text {
-  font-family: var(--font-hand), cursive;
-  font-weight: 600;
-  font-size: 34px;
-}
-.glued-ink-slip {
-  fill: none;
-  stroke: #23379a;
-  stroke-width: 1.1;
-  stroke-linecap: round;
-  stroke-opacity: 0.8;
+/* Straight onto the panel's paper. */
+/* The same pen as on the prints, so the same size: a third of a full-size
+   print's width for "playing piano". */
+.pen-note .ink {
+  display: block;
+  width: calc(min(360px, 74cqw) * 0.33 * var(--units) / 203);
+  height: auto;
+  opacity: 0.9;
 }
 .glued figcaption,
 .written {
