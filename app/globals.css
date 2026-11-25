@@ -2785,9 +2785,15 @@ p {
    print's width for "playing piano". */
 .pen-note .ink {
   display: block;
-  width: calc(min(360px, 74cqw) * 0.33 * var(--units) / 203);
+  width: calc(min(360px, 74cqw) * 0.33 * var(--units) / 203 * var(--hand, 1));
   height: auto;
   opacity: 0.9;
+}
+.pen-later {
+  --hand: 0.8;
+}
+.pen-later .ink {
+  opacity: 0.72;
 }
 .glued figcaption,
 .written {

@@ -52,7 +52,7 @@ export function Postit({
  * soaks in along the fibres and gets smudged by the hand; on a glossy print it
  * mostly stays put.
  */
-function Ink({ text, on }: { text: string; on: 'print' | 'paper' }) {
+function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; slip?: boolean }) {
   const id = `ink-${on}`;
   const paper = on === 'paper';
   const len = Math.round(text.length * 13.3);
@@ -136,7 +136,7 @@ function Ink({ text, on }: { text: string; on: 'print' | 'paper' }) {
         <text x="12" y="40" textLength={len} lengthAdjust="spacingAndGlyphs" mask={`url(#${id}-skips)`}>
           {text}
         </text>
-        <path className="ink-slip" d={`M${end - 2} 37 q8 1 15 -11`} />
+        {slip && <path className="ink-slip" d={`M${end - 2} 37 q8 1 15 -11`} />}
       </g>
     </svg>
   );
@@ -210,12 +210,20 @@ export function Written({ children, tilt = 0, ...at }: Place & { children: React
   );
 }
 
-/** A few words in blue ballpoint, straight onto the paper. */
-export function Pen({ children, tilt = -4, ...at }: Place & { children: string }) {
+/**
+ * A few words in blue ballpoint, straight onto the paper. `later` writes it
+ * as an afterthought: a little smaller, pressing lighter, no flourish.
+ */
+export function Pen({
+  children,
+  tilt = -4,
+  later,
+  ...at
+}: Place & { children: string; later?: boolean }) {
   const p = place({ tilt, ...at });
   return (
-    <div className={`${p.className} pen-note`} style={p.style}>
-      <Ink text={children} on="paper" />
+    <div className={`${p.className} pen-note${later ? ' pen-later' : ''}`} style={p.style}>
+      <Ink text={children} on="paper" slip={!later} />
     </div>
   );
 }
