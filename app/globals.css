@@ -2780,6 +2780,16 @@ p {
   opacity: 0.92;
   pointer-events: none;
 }
+/* A drawing on the sheet itself: just its lines, so the paper shows through. */
+.drawn {
+  height: 90%;
+}
+.drawn img {
+  display: block;
+  height: 100%;
+  width: auto;
+  opacity: 0.9;
+}
 /* Straight onto the panel's paper. */
 /* The same pen as on the prints, so the same size: a third of a full-size
    print's width for "playing piano". */
@@ -2791,6 +2801,16 @@ p {
 }
 .pen-later {
   --hand: 0.8;
+}
+.pen-black .ink {
+  fill: rgb(24 24 30);
+}
+.pen-black .ink text {
+  font-weight: 400;
+}
+.pen-black .ink-slip {
+  stroke: rgb(24 24 30);
+  stroke-width: 0.8;
 }
 .pen-later .ink {
   opacity: 0.72;

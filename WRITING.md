@@ -168,7 +168,7 @@ A long sheet folded like an accordion. Tapping the cover lets it fall open, pane
 </Unfold>
 ```
 
-`Glued` also takes `inked="…"`, written in blue pen over the print's top-right corner, `aged="light"` for a photo that already has a filter, `wear={0–3}` to pick how it's worn, and `cutout` for a photo cut out around its subject (a transparent `.webp`; macOS Vision can make one). `Pen` writes in blue ballpoint straight onto the paper.
+`Glued` also takes `inked="…"`, written in blue pen over the print's top-right corner, `aged="light"` for a photo that already has a filter, `wear={0–3}` to pick how it's worn, and `cutout` for a photo cut out around its subject (a transparent `.webp`; macOS Vision can make one). `Pen` writes in blue ballpoint straight onto the paper (`later` for an afterthought line, `ink="black"` for the fine black pen, `size={1.4}` for bigger writing). `Drawn` puts a drawing on the paper itself: just its lines, as a transparent `.webp`.
 
 The paper, its creases and its stains are drawn by `lib/paper-shader.ts` (textures: CC0, ambientCG).
 

@@ -52,12 +52,25 @@ export function Postit({
  * soaks in along the fibres and gets smudged by the hand; on a glossy print it
  * mostly stays put.
  */
-function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; slip?: boolean }) {
-  const id = `ink-${on}`;
+function Ink({
+  text,
+  on,
+  slip = true,
+  fine = false,
+}: {
+  text: string;
+  on: 'print' | 'paper';
+  slip?: boolean;
+  /** A fine-tipped pen: a thin line that barely spreads. */
+  fine?: boolean;
+}) {
+  const id = `ink-${on}${fine ? '-fine' : ''}`;
   const paper = on === 'paper';
   const len = Math.round(text.length * 13.3);
   const end = 12 + len;
   const at = (f: number) => 12 + f * len;
+  // a fine tip skips in hairline gaps
+  const nibSkip = fine ? 0.45 : 1;
   return (
     <svg
       className={`ink ink-on-${on}`}
@@ -70,25 +83,31 @@ function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; s
         <filter id={id} x="-8%" y="-30%" width="116%" height="160%" colorInterpolationFilters="sRGB">
           {/* the hand's wobble and the surface's tooth */}
           <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves={1} seed={4} result="grain" />
+          {/* a fine tip: the stroke down to a hairline, like the drawings */}
+          <feMorphology in="SourceGraphic" operator="erode" radius={fine ? 0.34 : 0} result="nib" />
           <feDisplacementMap
-            in="SourceGraphic"
+            in="nib"
             in2="grain"
-            scale={paper ? 1.3 : 0.9}
+            scale={fine ? 0.9 : paper ? 1.3 : 0.9}
             xChannelSelector="R"
             yChannelSelector="G"
             result="line"
           />
           {/* a ballpoint's uneven flow */}
           <feTurbulence type="fractalNoise" baseFrequency="0.08 0.3" numOctaves={2} seed={11} result="flow" />
-          <feColorMatrix in="flow" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.3 0 0 0 0.2" result="flowA" />
+          <feColorMatrix
+            in="flow"
+            values={`0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  ${fine ? '0.5 0 0 0 0.62' : '1.3 0 0 0 0.2'}`}
+            result="flowA"
+          />
           <feComposite in="line" in2="flowA" operator="in" result="pen" />
           {/* ink spreading where the surface took more of it */}
-          <feGaussianBlur in="line" stdDeviation={paper ? 1.7 : 1.5} result="soft" />
+          <feGaussianBlur in="line" stdDeviation={fine ? 0.8 : paper ? 1.7 : 1.5} result="soft" />
           <feTurbulence type="fractalNoise" baseFrequency="2.4" numOctaves={1} seed={8} result="fibres" />
           <feDisplacementMap
             in="soft"
             in2="fibres"
-            scale={paper ? 3.2 : 0}
+            scale={fine ? 1.4 : paper ? 3.2 : 0}
             xChannelSelector="R"
             yChannelSelector="B"
             result="wicked"
@@ -101,7 +120,7 @@ function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; s
           />
           <feComposite in="wicked" in2="patchA" operator="in" result="bleed" />
           <feComponentTransfer in="bleed" result="bleedSoft">
-            <feFuncA type="linear" slope={paper ? 0.95 : 0.85} />
+            <feFuncA type="linear" slope={fine ? 0.5 : paper ? 0.95 : 0.85} />
           </feComponentTransfer>
           {/* a smudge, where the side of the hand dragged through it wet */}
           <feGaussianBlur in="line" stdDeviation="4 0.7" result="drag" />
@@ -114,7 +133,7 @@ function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; s
           />
           <feComposite in="dragged" in2="handA" operator="in" result="smudge" />
           <feComponentTransfer in="smudge" result="smudgeSoft">
-            <feFuncA type="linear" slope={paper ? 0.45 : 0} />
+            <feFuncA type="linear" slope={paper && !fine ? 0.45 : 0} />
           </feComponentTransfer>
           <feMerge>
             <feMergeNode in="smudgeSoft" />
@@ -125,9 +144,9 @@ function Ink({ text, on, slip = true }: { text: string; on: 'print' | 'paper'; s
         <mask id={`${id}-skips`}>
           <rect width={end + 18} height="60" fill="#fff" />
           <g stroke="#000" strokeLinecap="round">
-            <path d={`M${at(0.27)} 22 l-4 22`} strokeWidth="1.4" />
-            <path d={`M${at(0.68)} 20 l-3 10`} strokeWidth="1.1" />
-            <path d={`M${at(0.88)} 30 l-3 12`} strokeWidth="1" />
+            <path d={`M${at(fine ? 0.62 : 0.27)} 22 l-4 22`} strokeWidth={1.4 * nibSkip} />
+            <path d={`M${at(0.68)} 20 l-3 10`} strokeWidth={1.1 * nibSkip} />
+            <path d={`M${at(0.88)} 30 l-3 12`} strokeWidth={nibSkip} />
           </g>
         </mask>
       </defs>
@@ -200,6 +219,28 @@ export function Glued({
   );
 }
 
+/**
+ * A drawing straight on the paper: only its lines (an image with a
+ * transparent background), as if drawn on this sheet. Sized to the panel's
+ * height.
+ */
+export function Drawn({
+  src,
+  alt,
+  width,
+  height,
+  tilt = 0,
+  ...at
+}: Place & { src: string; alt: string; width: number; height: number }) {
+  const p = place({ tilt, ...at });
+  return (
+    <figure className={`${p.className} drawn`} style={p.style}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </figure>
+  );
+}
+
 /** A line written straight onto the paper. */
 export function Written({ children, tilt = 0, ...at }: Place & { children: ReactNode }) {
   const p = place({ tilt, ...at });
@@ -218,12 +259,25 @@ export function Pen({
   children,
   tilt = -4,
   later,
+  ink = 'blue',
+  size = 1,
   ...at
-}: Place & { children: string; later?: boolean }) {
+}: Place & {
+  children: string;
+  later?: boolean;
+  /** Blue ballpoint, or the fine black pen the drawings are in. */
+  ink?: 'blue' | 'black';
+  /** Bigger or smaller handwriting than usual. */
+  size?: number;
+}) {
   const p = place({ tilt, ...at });
+  const style = size === 1 ? p.style : ({ ...p.style, '--hand': size } as CSSProperties);
   return (
-    <div className={`${p.className} pen-note${later ? ' pen-later' : ''}`} style={p.style}>
-      <Ink text={children} on="paper" slip={!later} />
+    <div
+      className={`${p.className} pen-note${later ? ' pen-later' : ''}${ink === 'black' ? ' pen-black' : ''}`}
+      style={style}
+    >
+      <Ink text={children} on="paper" slip={!later} fine={ink === 'black'} />
     </div>
   );
 }
