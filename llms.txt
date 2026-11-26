@@ -1,0 +1,109 @@
+# Gabrio Lina
+
+> Gabrio Lina is a software engineer at Morgan Stanley in São Paulo, Brazil, building software for trade allocation, payments and digital signing in Java, C# and Angular with global teams. He previously worked in electronic trading at BTG Pactual and in site reliability at Descomplica, won the Adapta AI Challenge 2025 (Brazil’s largest generative AI hackathon), and holds a BSc in Computer Science from Inteli. Before software, he made films. He is open to relocation.
+
+This is Gabrio Lina's personal site: his work, his field notes, and small interactive experiments. Contact is through LinkedIn.
+
+- Location: São Paulo, Brazil (open to relocation)
+- LinkedIn: https://www.linkedin.com/in/gabrio-lina-17ba60205
+- GitHub: https://github.com/gabriosilva
+- Languages: Portuguese (native), English (fluent; working language)
+
+## Pages
+
+- [Home](https://gabriolina.com/)
+- [Work](https://gabriolina.com/work/): every role and project, with what he did and the tools used
+- [About](https://gabriolina.com/about/): background, awards, skills and contact
+- [Field notes](https://gabriolina.com/field-notes/): notes, studies and pictures
+- [Experiments](https://gabriolina.com/experiments/): interactive models
+
+## Work
+
+### Now
+
+- [Trade allocation and digital signing](https://gabriolina.com/work/#morgan-stanley): Morgan Stanley, Software Engineer (Analyst) (Aug 2025 – present). Backend and full-stack work on trade allocation and digital signing, with global teams.
+  - Migrated 75+ legacy endpoints of a trade allocation platform from C# to Java 21 and Spring Boot in under three months, cutting response times by more than 30% on some high-load endpoints.
+  - Redesigned and launched a signing platform for clients and operations teams in under six months as part of a small team. Built much of the Angular UI and designed and implemented signature validation end to end.
+  - Designed an AI-assisted migration workflow that other engineers on my team adopted, and presented workflows I built with Claude and Codex at engineering knowledge-sharing sessions.
+  - Built and presented an agentic debugging tool for failing builds with my training team in New York, during the firm’s three-month international training programme.
+  - Tools: Java 21, Spring Boot, C#, Angular
+
+### Before
+
+- [Invoices and payments](https://gabriolina.com/work/#morgan-stanley-intern): Morgan Stanley, Software Engineer Intern (Jan 2024 – Jul 2025). A backend workflow for invoices and payments that replaced a mainframe integration.
+  - Designed and built a backend workflow for invoices and payments, replacing a mainframe integration. Worked with Brazil Accounts Payable and global engineering teams on requirements, testing and launch.
+  - Upgraded applications from Angular 4 to 19 and Python 2.7 to 3.12, and built Python tools to automate jobs.
+  - Tools: Java, C#, Angular, Python
+- [Measuring execution algorithms](https://gabriolina.com/work/#btg-pactual): BTG Pactual, Summer Intern, Electronic Trading (Jan 2023 and Jul 2023). A Transaction Cost Analysis platform for execution algorithms, and a FIX protocol test application.
+  - Developed a Transaction Cost Analysis platform — a Python package and microservice — to measure the performance of execution algorithms (VWAP, TWAP, POV).
+  - Developed a FIX protocol test application in C# and ASP.NET to verify message exchange.
+  - Tools: Python, FastAPI, C#, ASP.NET, FIX
+- [Keeping an edtech platform running](https://gabriolina.com/work/#descomplica): Descomplica, Junior Site Reliability Engineer (Apr 2021 – Jan 2022). Kubernetes clusters, infrastructure as code, CI/CD and automation.
+  - Operated Kubernetes clusters with Terraform, Ansible and Packer.
+  - Ran CI/CD on Jenkins and Spinnaker and automated operational tasks in Python and Node.js.
+  - Tools: Kubernetes, AWS, Terraform, Ansible, Packer, Jenkins, Spinnaker, Python, Node.js
+
+### Outside work
+
+- [Agents that learn a recorded task](https://gabriolina.com/work/#adapta-ai-challenge): Adapta AI Challenge 2025 · 1st place, Team STAG, with three teammates (Aug 2025). Two AI agent platforms, for browser automation and for usability and vulnerability testing. Both learn a recorded task and automate it.
+  - Won both stages of Brazil’s largest generative AI hackathon: 80 finalists from about 6,000 applicants.
+  - R$300,000+ (over €50,000) in cash prizes.
+  - Tools: AI agents, Browser automation
+- [An AI nutrition tracking app](https://gabriolina.com/work/#nutrition-app): Independent, with one other developer (2024 – 2025). Built and ran the app for about a year. Around 100 people signed up.
+  - Tools: Next.js, FastAPI, LangGraph, PostgreSQL (RAG), AWS, Terraform, GitHub Actions
+
+### University projects
+
+- [Reinforcement learning for trade matching](https://gabriolina.com/work/#rl-trade-matching): BTG Pactual (2024). An agent (PPO) that learns how much of a spot purchase to match against a forward sale, in synthetic fixed income.
+  - Tools: Python, PPO
+  - Repository: https://github.com/gabriosilva/rl-trade-matching
+- [A language and compiler for therapy activities](https://gabriolina.com/work/#therapy-language-compiler): AACD (2023). A small language, compiler and desktop IDE used to create therapy activities for a sensory mat.
+  - Tools: Python, Electron, React
+  - Repository: https://github.com/gabriosilva/therapy-language-compiler
+- [Low-altitude flight route planner](https://gabriolina.com/work/#flightwise-route-planner): AEL Sistemas (2023). Plans low-altitude flight routes over terrain.
+  - Tools: Java, Spring Boot, Neo4j, A*
+  - Repository: https://github.com/gabriosilva/flightwise-route-planner
+- [Paper-roll cutting optimiser](https://gabriolina.com/work/#paper-roll-cutting-optimiser): Klabin (2023). Plans how to cut large paper rolls to fill orders with minimal waste.
+  - Tools: Java
+  - Repository: https://github.com/gabriosilva/paper-roll-cutting-optimiser
+- [Architecture for traffic spikes](https://gabriolina.com/work/#traffic-spike-aws-architecture): Stone (2023). AWS architecture for a web app that gets sudden bursts of visitors from TV advertising.
+  - Tools: AWS
+  - Repository: https://github.com/gabriosilva/traffic-spike-aws-architecture
+- [Field segmentation](https://gabriolina.com/work/#field-segmentation-unet): A de Agro (2024). Computer vision models that outline cultivated fields and estimate their area.
+  - Tools: Python, U-Net, ResUNet
+  - Repository: https://github.com/gabriosilva/field-segmentation-unet
+- [Customer support chatbot](https://gabriolina.com/work/#support-chatbot-rag): Brastel (2024). Intent classification plus retrieval-augmented answers for support questions.
+  - Tools: Python, RAG, LLaMA
+  - Repository: https://github.com/gabriosilva/support-chatbot-rag
+- [Greenhouse monitoring](https://gabriolina.com/work/#greenhouse-iot-esp32): Gerdau (2022). ESP32 firmware and apps that track temperature and humidity in eucalyptus nurseries.
+  - Tools: C++, ESP32, React Native
+  - Repository: https://github.com/gabriosilva/greenhouse-iot-esp32
+- [School management dashboard](https://gabriolina.com/work/#school-management-dashboard): Falconi (2022). A questionnaire and dashboard that show school leaders their strengths and gaps.
+  - Tools: JavaScript, Node.js
+  - Repository: https://github.com/gabriosilva/school-management-dashboard
+- [TV audience forecast](https://gabriolina.com/work/#tv-audience-forecast): TV Gazeta (2022). A model that predicts TV audience by time slot, with a site to explore the forecasts.
+  - Tools: Python, React
+  - Repository: https://github.com/gabriosilva/tv-audience-forecast
+
+## Awards
+
+- 1st place, Adapta AI Challenge 2025
+- 1st place, Hackatour Cataratas 2023
+- 2nd place, Brasa Hacks 2022
+- Finalist, VCIC Brasil
+
+## Education
+
+- BSc in Computer Science (9.29/10), Inteli — Institute of Technology and Leadership, São Paulo, 2022–2025. Eleven team projects for industry partners.
+
+## Skills
+
+- Languages: Java, Python, C#, TypeScript, SQL
+- Frameworks: Spring Boot, ASP.NET, FastAPI, Node.js, Angular, Next.js, LangGraph
+- Infrastructure and data: AWS, Kubernetes, Docker, Terraform, Jenkins, GitHub Actions, PostgreSQL
+
+## Field notes
+
+- [Things that make me feel human](https://gabriolina.com/field-notes/things-that-make-me-feel-human/) (2026-11-23): A list of things that make me feel alive, and human.
+- [A tree from one rule](https://gabriolina.com/field-notes/a-tree-from-one-rule/) (2026-11-15): A little experiment with trees.
+- [New York](https://gabriolina.com/field-notes/new-york/) (2026-11-14): A few pictures from a recent trip to NYC, in the order they happened: Times Square on the first night, streets by day, and the skyline after dark.
